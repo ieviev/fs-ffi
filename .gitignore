@@ -478,3 +478,4 @@ $RECYCLE.BIN/
 
 lib/
 *.out
+*.exe

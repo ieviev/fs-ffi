@@ -1,0 +1,9 @@
+[package]
+name = "rustlib"
+version = "0.0.1"
+
+[dependencies]
+
+[lib]
+name = "rustlib"
+crate-type = ["dylib"]

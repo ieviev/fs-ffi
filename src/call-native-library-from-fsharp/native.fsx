@@ -41,6 +41,12 @@ write_line(pointer_to_str)
 let pstr_to_dotnet_string (pstr:nativeint) =
     Marshal.PtrToStringAuto(pstr)
 
-// [<DllImport( "user32.dll", CallingConvention = CallingConvention.Cdecl )>]
-// extern void ShowCursor(bool show)
+// calling rust library, build the project first in src/native-lib-rust/
 
+[<System.Runtime.InteropServices.DllImport(  
+    __SOURCE_DIRECTORY__ + "/../native-lib-rust/target/debug/librustlib.so")>]
+extern unit helloworld()
+
+helloworld()
+
+// let lib_ptr = NativeLibrary.Load("rustlib.so")
